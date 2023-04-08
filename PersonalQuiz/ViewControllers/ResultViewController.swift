@@ -28,19 +28,15 @@ final class ResultViewController: UIViewController {
     
     
     private func getResult(for answers: [Answer]) {
-        var animalType = answers[0].animal
         let animals = answers.map{ $0.animal }
-        var selectedAnimals: [Animal : Int] = [:]
+        let animal = Dictionary(grouping: animals, by: { $0 })
+            .sorted(by: { $0.value.count > $1.value.count })
+            .first?
+            .key
         
-        for animal in animals {
-            selectedAnimals[animal] = (selectedAnimals[animal] ?? 0) + 1
-            if selectedAnimals[animal] == selectedAnimals.values.max() {
-                animalType = animal
-            }
-        }
-        
-        titleLabel.text = "Вы - \(animalType.rawValue)"
-        descriptionLabel.text = animalType.definition
+        guard let animal else { return }
+        titleLabel.text = "Вы - \(animal.rawValue)"
+        descriptionLabel.text = animal.definition
     }
     
     deinit {
