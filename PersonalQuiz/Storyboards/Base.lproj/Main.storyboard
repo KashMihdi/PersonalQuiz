@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,7 +283,7 @@
                         <outletCollection property="multipleSwitches" destination="ZWs-Ee-axM" collectionClass="NSMutableArray" id="OOU-MM-QD5"/>
                         <outletCollection property="rangedLabels" destination="OUn-W3-PEf" collectionClass="NSMutableArray" id="0xB-f5-Q67"/>
                         <outletCollection property="rangedLabels" destination="YQL-Xn-c4z" collectionClass="NSMutableArray" id="rpQ-7H-eVt"/>
-                        <segue destination="ty3-Yw-Rxn" kind="presentation" identifier="showResult" modalPresentationStyle="fullScreen" id="Xop-qL-efX"/>
+                        <segue destination="3oo-Vr-nhB" kind="show" identifier="showResult" id="9d3-qA-RYM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeD-9l-NnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -327,7 +327,7 @@
                     <navigationItem key="navigationItem" title="Результат" id="fPF-h1-ReL">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="aCN-rK-8OG">
                             <connections>
-                                <segue destination="jga-0a-8vl" kind="unwind" unwindAction="unwindFor:sender:" id="6aB-OR-Mep"/>
+                                <action selector="doneButtonPressed:" destination="3oo-Vr-nhB" id="Qpb-NW-Kqd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -337,9 +337,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1v-Tj-vne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="jga-0a-8vl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3474.375" y="1.056338028169014"/>
+            <point key="canvasLocation" x="2514" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="goQ-S4-hpt">
@@ -347,7 +346,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="msW-I2-Msm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fM6-Qi-8NT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -362,24 +361,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="943-Fm-IRt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885" y="2.112676056338028"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="X0g-RR-DDh">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ty3-Yw-Rxn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="5Dt-K4-0pR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3oo-Vr-nhB" kind="relationship" relationship="rootViewController" id="2x1-U0-zns"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aOD-ya-1Gv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2603" y="0.0"/>
         </scene>
     </scenes>
     <resources>

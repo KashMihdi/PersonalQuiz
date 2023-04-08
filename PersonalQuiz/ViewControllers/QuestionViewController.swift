@@ -43,9 +43,7 @@ final class QuestionViewController: UIViewController {
     
     // MARK: - Transfer Data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigationVC = segue.destination
-        guard let navigationVC = navigationVC as? UINavigationController else { return }
-        guard let resultVC = navigationVC.topViewController as? ResultViewController else { return }
+        guard let resultVC = segue.destination as? ResultViewController else { return }
         resultVC.answerChosen = answersChosen
     }
     

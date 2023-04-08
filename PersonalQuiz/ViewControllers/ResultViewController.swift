@@ -17,8 +17,15 @@ final class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         getResult(for: answerChosen)
     }
+    
+    
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
     
     private func getResult(for answers: [Answer]) {
         var animalType = answers[0].animal
