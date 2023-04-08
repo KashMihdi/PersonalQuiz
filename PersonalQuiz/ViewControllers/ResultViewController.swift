@@ -21,25 +21,20 @@ final class ResultViewController: UIViewController {
     }
     
     private func getResult(for answers: [Answer]) {
-        var character = answers[0].animal
+        var animalType = answers[0].animal
         let animals = answers.map{ $0.animal }
-        var dict: [Animal : Int] = [:]
+        var selectedAnimals: [Animal : Int] = [:]
         
         for animal in animals {
-            dict[animal] = (dict[animal] ?? 0) + 1
-            if dict[animal] == dict.values.max() {
-                character = animal
+            selectedAnimals[animal] = (selectedAnimals[animal] ?? 0) + 1
+            if selectedAnimals[animal] == selectedAnimals.values.max() {
+                animalType = animal
             }
         }
         
-        titleLabel.text = "Вы - \(character.rawValue)"
-        descriptionLabel.text = character.definition
+        titleLabel.text = "Вы - \(animalType.rawValue)"
+        descriptionLabel.text = animalType.definition
     }
-    
-    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
-    }
-    
     
     deinit {
         print("\(type(of: self)) has been deallocated")

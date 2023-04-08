@@ -41,10 +41,14 @@ final class QuestionViewController: UIViewController {
         rangedSlider.value = answerCount / 2
     }
     
+    // MARK: - Transfer Data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let resultVC = segue.destination as? ResultViewController else { return }
+        let navigationVC = segue.destination
+        guard let navigationVC = navigationVC as? UINavigationController else { return }
+        guard let resultVC = navigationVC.topViewController as? ResultViewController else { return }
         resultVC.answerChosen = answersChosen
     }
+    
 
     // MARK: - IB Actions
     @IBAction func singleButtonAnswerPressed(_ sender: UIButton) {
